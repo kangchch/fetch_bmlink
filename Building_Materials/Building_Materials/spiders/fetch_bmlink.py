@@ -100,7 +100,7 @@ class BuildingMaterialSpider(scrapy.Spider):
 
         # 员工人数 staffs
         staffs = re.findall(u"员工人数：\n?\s*([^\n]+)", xpath_handles, re.S) if xpath_handles else ''
-        i['staffs'] = '' if not year_turnover else staffs[0].strip()
+        i['staffs'] = '' if not staffs else staffs[0].strip()
 
         # xpath_handles = sel.xpath("//div[@class='company_jj'][2]/ul[@class='tableType']//li")
         # for handle in xpath_handles:
